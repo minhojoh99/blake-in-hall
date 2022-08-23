@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view image</title>
+</head>
+<body>
+    <h1> 업로드 된 이미지들 </h1>
+    <p>
+        <button type="button" onclick="location.href='/' ">뒤로가기</button>
+    </p>
+    <img src="{{ url_for('static', filename=upload_img) }}" width="200" height="200">
+    <table border>
+        <caption align="top">광고 추천 1위 ~ 20위</caption>
+        <tr>
+            <td>image</td>
+            {% for obj in data_list%}
+                <td> <img src="{{ url_for('static', filename=obj.name) }}" width="200" height="200"></td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>유사도</td>
+            {% for obj in data_list%}
+                <td>{{obj.similarity}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>세부 색상</td>
+            {% for obj in data_list%}
+                <td>{{obj.color}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>제품 링크</td>
+            {% for obj in data_list%}
+                <td>{{obj.link}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>이미지 경로</td>
+            {% for obj in data_list%}
+                <td>{{obj.path}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>

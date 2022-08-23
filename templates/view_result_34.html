@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>광고 추천</title>
+</head>
+<body>
+    <h1> 광고 추천 결과 </h1>
+    <p>
+        <button type="button" onclick="location.href='/' ">뒤로가기</button>
+    </p>
+    <table border>
+        <caption align="top">광고 추천 1위 ~ 20위</caption>
+        <tr>
+            <td>image</td>
+            {% for obj in data_list%}
+                <td><img src="{{ url_for('static', filename=obj.name) }}" width="200" height="200"></td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>메인 카피</td>
+            {% for obj in main_copys%}
+                <td>{{obj}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>서브 카피</td>
+            {% for obj in sub_copys%}
+                <td>{{obj}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>추천 점수</td>
+            {% for obj in scores%}
+                <td>{{obj}}</td>
+            {% endfor %}
+        </tr>
+</body>
+</html>

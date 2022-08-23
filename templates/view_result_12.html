@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>예상 광고 성과 출력</title>
+</head>
+<body>
+    <h1> 광고 추천 결과 </h1>
+    <p>
+        <button type="button" onclick="location.href='/' ">뒤로가기</button>
+    </p>
+    <table border>
+        <caption align="top">광고 성과</caption>
+        <tr>
+            <td>예상 총전환율</td>
+            <td>{{data_list['total_convert_rate'][0][0]}}</td>
+        </tr>
+        <tr>
+            <td>예상 CTR</td>
+            <td>{{data_list['ctr'][0][0]}}</td>
+        </tr>
+        <tr>
+            <td>예상 CPC</td>
+            <td>{{data_list['cpc'][0][0]}}</td>
+        </tr>
+</body>
+</html>
